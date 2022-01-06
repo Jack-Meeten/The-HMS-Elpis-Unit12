@@ -19,6 +19,10 @@ public class WeatherGenerator : MonoBehaviour
     private float startTempValue = 0;
     private float endTempValue = 10;
 
+    public ParticleSystem snowClose, snowFast, snowFar;
+    public PostProcessVertFog fog;
+
+
     private WeatherCalculator _wC;
 
     private void Start()
@@ -44,5 +48,20 @@ public class WeatherGenerator : MonoBehaviour
         _temp = Mathf.SmoothStep(startTempValue, endTempValue, timeElapsed / lerpTime);
         timeElapsed += Time.deltaTime;
         //Debug.Log(_temp);
+
+        if (_weatherType == 2)
+        {
+            snowClose.Play(true);
+            snowFar.Play(true);
+            snowFast.Play(true);
+            fog.enabled = true;
+        }
+        if (_weatherType == 1 || _weatherType == 3)
+        {
+            snowClose.Stop(true);
+            snowFar.Stop(true);
+            snowFast.Stop(true);
+            fog.enabled = false;
+        }
     }
 }
