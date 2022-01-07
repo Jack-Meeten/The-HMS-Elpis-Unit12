@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class PlayerWeather : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public WeatherGenerator weatherGen;
+
+    private float _temperature;
+    private float _health;
+    private float _hunger;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
