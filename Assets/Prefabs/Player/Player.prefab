@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 5270403043134110671}
   - component: {fileID: 5270403043134110668}
   - component: {fileID: 5270403043134110669}
+  - component: {fileID: 1143245347}
   m_Layer: 0
   m_Name: Player
   m_TagString: PlayerScripts
@@ -154,7 +155,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5270403043134110666}
-  m_LocalRotation: {x: -0, y: 0.841401, z: -0, w: 0.5404113}
+  m_LocalRotation: {x: 0, y: 0.8414023, z: 0, w: 0.5404093}
   m_LocalPosition: {x: 36, y: 3.92, z: 1775}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -238,6 +239,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1143245347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5270403043134110666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffbef2360973ccc4b8e1a99fde90d3c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weatherGen: {fileID: 0}
 --- !u!1 &5270403043629095775
 GameObject:
   m_ObjectHideFlags: 0
