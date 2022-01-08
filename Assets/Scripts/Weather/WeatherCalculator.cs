@@ -11,7 +11,7 @@ namespace Assets
     {
         public void _weatherCalculator(float perlin, out float temperature, out int weatherType, out float windSpeed)
         {
-            temperature = (perlin * 15) - 15;
+            temperature = (perlin * 40) - 40;
             weatherType = 2;
             windSpeed = 1;
             if (perlin <= 0.3)

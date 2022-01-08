@@ -10,9 +10,9 @@ public class WeatherGenerator : MonoBehaviour
     public Vector2 perlinPos;
     [SerializeField] private float perlinNoise = 0f;
 
-    private float _temp;
-    private float _windSpeed;
-    private int _weatherType;
+    public float _temp;
+    public float _windSpeed;
+    public int _weatherType;
 
     private float timeElapsed;
     private float lerpTime = 60;
@@ -36,7 +36,7 @@ public class WeatherGenerator : MonoBehaviour
         perlinPos.x = player.transform.position.x / 100;
         perlinPos.y = player.transform.position.z / 100;
         perlinNoise = Mathf.PerlinNoise(perlinPos.x, perlinPos.y);
-        Debug.Log(_weatherType);
+        //Debug.Log(_weatherType);
 
         //calls weather calculator class to get the temp, weather type and wind speed/direction
         _wC._weatherCalculator(perlinNoise, out float tempOut, out int weatherTypeOut, out float windSpeedOut);
@@ -47,21 +47,28 @@ public class WeatherGenerator : MonoBehaviour
         //temp lerp
         _temp = Mathf.SmoothStep(startTempValue, endTempValue, timeElapsed / lerpTime);
         timeElapsed += Time.deltaTime;
-        //Debug.Log(_temp);
+        Debug.Log(_temp);
 
         if (_weatherType == 2)
         {
             snowClose.Play(true);
             snowFar.Play(true);
             snowFast.Play(true);
-            fog.enabled = true;
+
+            if (fog.height >= 150)
+            {
+                fog.height -= Time.deltaTime * 5;
+            }
         }
         if (_weatherType == 1 || _weatherType == 3)
         {
             snowClose.Stop(true);
             snowFar.Stop(true);
             snowFast.Stop(true);
-            fog.enabled = false;
+            if (fog.height <= 800)
+            {
+                fog.height += Time.deltaTime * 5;
+            }
         }
     }
 }
