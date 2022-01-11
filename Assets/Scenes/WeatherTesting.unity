@@ -925,7 +925,7 @@ PrefabInstance:
       objectReference: {fileID: 1588014459}
     - target: {fileID: 5270403043134110656, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5270403043134110656, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2849,13 +2849,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2285597824072254670, guid: 7c575b47e2f292941832e2ad3bf857b5, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285597824586640996, guid: 7c575b47e2f292941832e2ad3bf857b5, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285597825092968863, guid: 7c575b47e2f292941832e2ad3bf857b5, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2285597825425326620, guid: 7c575b47e2f292941832e2ad3bf857b5, type: 3}
       propertyPath: m_Name
       value: Camera Holder
       objectReference: {fileID: 0}
     - target: {fileID: 2285597825425326621, guid: 7c575b47e2f292941832e2ad3bf857b5, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2285597825425326621, guid: 7c575b47e2f292941832e2ad3bf857b5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2973,7 +2985,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5053305822774766339, guid: 948872c3c831236498721ea1a3602353, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5053305822774766339, guid: 948872c3c831236498721ea1a3602353, type: 3}
       propertyPath: m_LocalPosition.x
