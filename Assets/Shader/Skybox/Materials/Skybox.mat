@@ -23,6 +23,7 @@ Material:
         m_Texture: {fileID: 8900000, guid: 2eb2194b7b008ee4e881f527fa59d4c5, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _Exposure: 1
     - _Rotation: 0
