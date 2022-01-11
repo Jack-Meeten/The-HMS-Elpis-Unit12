@@ -39,6 +39,5 @@ public class PlayerWeather : MonoBehaviour
         {
             movementSpeedModifier = 0.75f;
         }
-        Debug.Log(_health);
     }
 }

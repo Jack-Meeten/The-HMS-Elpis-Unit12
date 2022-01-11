@@ -31,8 +31,11 @@ public class CharacterController : MonoBehaviour
 
     // Jumping.
     [Header("Ground Detection")]
+    [SerializeField] LayerMask groundMask;
     [SerializeField] float PlayerHeight = 2f;
     bool isGrounded;
+    float groundDistance = 0.4f;
+    
 
 
     // Direction of the player.
@@ -40,6 +43,29 @@ public class CharacterController : MonoBehaviour
 
     // Rigidbody for player physics.
     Rigidbody rb;
+
+    // Handling Slopes.
+    RaycastHit slopeHit;
+    Vector3 slopeMoveDir;
+
+    private bool OnSlope()
+    {
+        Debug.DrawRay(transform.position, Vector3.down * (PlayerHeight / 2 + 0.5f));
+        // Player raycasting from the point of their feet.
+        if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, PlayerHeight / 2 + 0.4f))
+        {
+            // Using raycast to check if the player is not on normal ground == slope.
+            if (slopeHit.normal != Vector3.up)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        return false;
+    }
 
 
     private void Start()
@@ -52,7 +78,7 @@ public class CharacterController : MonoBehaviour
     private void Update()
     {
         // Checking if the player is on the ground.
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, PlayerHeight / 2 + 0.01f);
+        isGrounded = Physics.CheckSphere(transform.position - new Vector3(0, 1, 0), groundDistance, groundMask);
 
         // Calling Player Input and Drag Control every frame.
         PlayerInput();
@@ -63,6 +89,9 @@ public class CharacterController : MonoBehaviour
         {
             Jump();
         }
+
+        // Slope moving.
+        slopeMoveDir = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal);
         
     }
     private void FixedUpdate()
@@ -101,10 +130,16 @@ public class CharacterController : MonoBehaviour
 
     void MovePlayer()
     {
-        if (isGrounded)
+        if (isGrounded && !OnSlope())
         {
             // Multiplies the keyboard input by the movement speed to get the player movement.
+            Debug.Log("Grounded but not in slope");
             rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
+        }
+        else if(isGrounded && OnSlope())
+        {
+            Debug.Log("Hitting Slope");
+            rb.AddForce(slopeMoveDir.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
         }
         else if (!isGrounded)
         {
