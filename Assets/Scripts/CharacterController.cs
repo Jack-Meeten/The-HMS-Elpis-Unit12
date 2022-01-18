@@ -7,7 +7,7 @@ public class CharacterController : MonoBehaviour
     // Basic values for the player speed.
     [Header("Movement")]
     [SerializeField] float moveSpeed = 6f;
-    [SerializeField] float movementMultiplier = 10f;
+    public float movementMultiplier = 10f;
     [SerializeField] float airMultiplier = 0.31f;
 
     // Jumping values.

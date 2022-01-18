@@ -920,9 +920,73 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1143245347, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
+      propertyPath: cH
+      value: 
+      objectReference: {fileID: 1143245347}
+    - target: {fileID: 1143245347, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
       propertyPath: weatherGen
       value: 
       objectReference: {fileID: 1588014459}
+    - target: {fileID: 1143245347, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
+      propertyPath: walkCurve.m_PreInfinity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143245347, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
+      propertyPath: walkCurve.m_PostInfinity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143245347, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
+      propertyPath: walkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143245347, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
+      propertyPath: walkCurve.m_Curve.Array.data[0].time
+      value: 0.008266449
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143245347, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
+      propertyPath: walkCurve.m_Curve.Array.data[1].time
+      value: 0.49822533
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143245347, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
+      propertyPath: walkCurve.m_Curve.Array.data[2].time
+      value: 1.0060251
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143245347, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
+      propertyPath: walkCurve.m_Curve.Array.data[0].value
+      value: 0.06902313
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143245347, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
+      propertyPath: walkCurve.m_Curve.Array.data[1].value
+      value: 7.9957232
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143245347, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
+      propertyPath: walkCurve.m_Curve.Array.data[2].value
+      value: -0.0036115646
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143245347, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
+      propertyPath: walkCurve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143245347, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
+      propertyPath: walkCurve.m_Curve.Array.data[1].inSlope
+      value: -0.088422276
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143245347, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
+      propertyPath: walkCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143245347, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
+      propertyPath: walkCurve.m_Curve.Array.data[1].inWeight
+      value: 0.06402216
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143245347, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
+      propertyPath: walkCurve.m_Curve.Array.data[1].outSlope
+      value: -0.088422276
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143245347, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
+      propertyPath: walkCurve.m_Curve.Array.data[1].outWeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5270403043134110656, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1755,6 +1819,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5270403043134110666, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
   m_PrefabInstance: {fileID: 630860157}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1143245347 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5270403043134110670, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
+  m_PrefabInstance: {fileID: 630860157}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143245341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a696c0470abddab429c0e9796b9af711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1162014679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3007,6 +3082,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 387475629089783440, guid: 7c575b47e2f292941832e2ad3bf857b5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2285597824072254670, guid: 7c575b47e2f292941832e2ad3bf857b5, type: 3}
       propertyPath: playOnAwake
       value: 1
