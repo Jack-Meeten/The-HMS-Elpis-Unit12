@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Assets;
 using TMPro;
+using UnityEngine.UI;
 
 public class WeatherGenerator : MonoBehaviour
 {
     public GameObject player;
-    //pn width and height
-    public Vector2 perlinPos;
     [SerializeField] private float perlinNoise = 0f;
-    [SerializeField] private TEMPPN pPN;
 
     public float _temp;
     public float _windSpeed;
@@ -30,6 +28,16 @@ public class WeatherGenerator : MonoBehaviour
     public TextMeshProUGUI tempText;
     public TextMeshProUGUI typeText;
     public TextMeshProUGUI perlinText;
+    public TextMeshProUGUI tranText;
+    public RawImage transIm;
+    public TextMeshProUGUI closeText;
+    public RawImage closeIm;
+    public TextMeshProUGUI farText;
+    public RawImage farIm;
+    public TextMeshProUGUI fastText;
+    public RawImage fastIm;
+    public TextMeshProUGUI fogText;
+    public RawImage fogIm;
 
     private void Start()
     {
@@ -53,10 +61,12 @@ public class WeatherGenerator : MonoBehaviour
             eM2.rateOverTime = 0;
         }
     }
-        private void Update()
+    private void Update()
     {
-        perlinNoise = pPN.sample;
-        Debug.Log(perlinNoise);
+        perlinNoise = Mathf.PerlinNoise(player.transform.position.x / 100, player.transform.position.z / 100);
+        tempText.text = "Temp:" + _temp + "C";
+        typeText.text = "Type:" + _weatherType;
+        perlinText.text = "Perlin:" + perlinNoise;
 
         //calls weather calculator class to get the temp, weather type and wind speed/direction
         _wC._weatherCalculator(perlinNoise, out float tempOut, out int weatherTypeOut, out float windSpeedOut);
@@ -75,21 +85,46 @@ public class WeatherGenerator : MonoBehaviour
             if (fog.height >= 150)
             {
                 fog.height -= Time.deltaTime * 10;
+                fogText.text = fog.height.ToString();
+                fogIm.color = Color.red;
+                tranText.text = "Transitioning";
+                transIm.color = Color.red;
             }
             if (snowFast.emission.rateOverTime.constant <= 2000)
             {
                 var eM = snowFast.emission;
                 eM.rateOverTime = eM.rateOverTime.constant + Time.deltaTime * 100;
+                fastText.text = eM.rateOverTime.constant.ToString();
+                fastIm.color = Color.red;
+                tranText.text = "Transitioning";
+                transIm.color = Color.red;
             }
             if (snowClose.emission.rateOverTime.constant <= 40)
             {
                 var eM = snowClose.emission;
                 eM.rateOverTime = eM.rateOverTime.constant + Time.deltaTime * 0.5f;
+                closeText.text = eM.rateOverTime.constant.ToString();
+                closeIm.color = Color.red;
+                tranText.text = "Transitioning";
+                transIm.color = Color.red;
             }
             if (snowFar.emission.rateOverTime.constant <= 450)
             {
                 var eM = snowFar.emission;
                 eM.rateOverTime = eM.rateOverTime.constant + Time.deltaTime * 30;
+                farText.text = eM.rateOverTime.constant.ToString();
+                fastIm.color = Color.red;
+                tranText.text = "Transitioning";
+                transIm.color = Color.red;
+            }
+            else
+            {
+                tranText.text = "Done";
+                transIm.color = Color.green;
+                fastIm.color = Color.green;
+                closeIm.color = Color.green;
+                farIm.color = Color.green;
+                fogIm.color = Color.green;
             }
         }
         if (_weatherType == 1 || _weatherType == 3)
@@ -97,21 +132,50 @@ public class WeatherGenerator : MonoBehaviour
             if (fog.height <= 800)
             {
                 fog.height += Time.deltaTime * 10;
+                fogText.text = fog.height.ToString();
+                fogIm.color = Color.red;
+                tranText.text = "Transitioning";
+                transIm.color = Color.red;
             }
             if (snowFast.emission.rateOverTime.constant >= 0)
             {
                 var eM = snowFast.emission;
                 eM.rateOverTime = eM.rateOverTime.constant - Time.deltaTime * 100;
+                fastText.text = eM.rateOverTime.constant.ToString();
+                fastIm.color = Color.red;
+                tranText.text = "Transitioning";
+                transIm.color = Color.red;
             }
             if (snowClose.emission.rateOverTime.constant >= 0)
             {
                 var eM = snowClose.emission;
                 eM.rateOverTime = eM.rateOverTime.constant - Time.deltaTime * 0.5f;
+                closeText.text = eM.rateOverTime.constant.ToString();
+                closeIm.color = Color.red;
+                tranText.text = "Transitioning";
+                transIm.color = Color.red;
             }
             if (snowFar.emission.rateOverTime.constant >= 0)
             {
                 var eM = snowFar.emission;
                 eM.rateOverTime = eM.rateOverTime.constant - Time.deltaTime * 30;
+                farText.text = eM.rateOverTime.constant.ToString();
+                farIm.color = Color.red;
+                tranText.text = "Transitioning";
+                transIm.color = Color.red;
+            }
+            if (true)
+            {
+
+            }
+            else
+            {
+                tranText.text = "Done";
+                transIm.color = Color.green;
+                fastIm.color = Color.green;
+                closeIm.color = Color.green;
+                farIm.color = Color.green;
+                fogIm.color = Color.green;
             }
         }
     }
