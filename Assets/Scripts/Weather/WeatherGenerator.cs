@@ -50,10 +50,10 @@ public class WeatherGenerator : MonoBehaviour
         private void Update()
     {
         //player.transform.Translate(0.1f, 0, 0.1f);
-        perlinPos.x = player.transform.position.x / 100;
-        perlinPos.y = player.transform.position.z / 100;
+        perlinPos.x = (player.transform.position.x / 100) + Time.deltaTime / 5;
+        perlinPos.y = (player.transform.position.z / 100) + Time.deltaTime / 5;
         perlinNoise = Mathf.PerlinNoise(perlinPos.x, perlinPos.y);
-        //Debug.Log(_weatherType);
+        Debug.Log(perlinNoise);
 
         //calls weather calculator class to get the temp, weather type and wind speed/direction
         _wC._weatherCalculator(perlinNoise, out float tempOut, out int weatherTypeOut, out float windSpeedOut);
