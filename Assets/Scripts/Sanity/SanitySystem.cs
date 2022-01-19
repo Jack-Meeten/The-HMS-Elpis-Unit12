@@ -10,25 +10,39 @@ public class SanitySystem : MonoBehaviour
     [SerializeField] float SanityCurrentValue;
     public bool SanityTrigger = false;
 
-    // Start is called before the first frame update
+    // Array of spawn locations for the sanity shadows & sounds
+    public GameObject[] SpawnLocations;
+
+    public GameObject[] SpawnShadows;
+
+
     void Start()
     {
+        // Selects a random game object to use as a spawn location.
+        int rand = Random.Range(0, SpawnLocations.Length);
+
+        // Selects a random game object to use as a spawn location.
+        int rand2 = Random.Range(0, SpawnShadows.Length);
+
+        // Sets Current player sanity to starter sanity, sets the trigger to false so that the player doesnt lose sanity instantly.
         SanityCurrentValue = SanityStarterValue;
         SanityTrigger = false;
     }
 
-    // Update is called once per frame
+
     void FixedUpdate()
     {
         TriggerChecker();
     }
 
+
+    // If the player activates the sanity trigger, sanity starts to drain.
     void TriggerChecker()
     {
         if (SanityTrigger == true)
         {
             SanityCurrentValue -= Time.deltaTime;
-            Debug.Log("Sanity is being reduced!");
+            // Debug.Log("Sanity is being reduced!");
         }
     }
 }
