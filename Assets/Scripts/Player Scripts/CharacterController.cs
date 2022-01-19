@@ -7,8 +7,8 @@ public class CharacterController : MonoBehaviour
     // Basic values for the player speed.
     [Header("Movement")]
     [SerializeField] float moveSpeed = 6f;
-    public float movementMultiplier = 10f;
     [SerializeField] float airMultiplier = 0.31f;
+    public float movementMultiplier = 10f;
 
     // Jumping values.
     [Header("Jumping")]
@@ -35,7 +35,6 @@ public class CharacterController : MonoBehaviour
     [SerializeField] float PlayerHeight = 2f;
     bool isGrounded;
     float groundDistance = 0.4f;
-    
 
 
     // Direction of the player.
@@ -133,7 +132,7 @@ public class CharacterController : MonoBehaviour
         if (isGrounded && !OnSlope())
         {
             // Multiplies the keyboard input by the movement speed to get the player movement.
-            Debug.Log("Grounded but not in slope");
+            //Debug.Log("Grounded but not in slope");
             rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
         }
         else if(isGrounded && OnSlope())

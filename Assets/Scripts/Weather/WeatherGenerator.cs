@@ -65,7 +65,7 @@ public class WeatherGenerator : MonoBehaviour
         _temp = Mathf.SmoothStep(startTempValue, endTempValue, timeElapsed / lerpTime);
         timeElapsed += Time.deltaTime;
         //Debug.Log(_temp);
-        Debug.Log(_weatherType);
+        //Debug.Log(_weatherType);
 
         if (_weatherType == 2)
         {
