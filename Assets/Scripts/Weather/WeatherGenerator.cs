@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Assets;
+using TMPro;
 
 public class WeatherGenerator : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class WeatherGenerator : MonoBehaviour
     //pn width and height
     public Vector2 perlinPos;
     [SerializeField] private float perlinNoise = 0f;
+    [SerializeField] private TEMPPN pPN;
 
     public float _temp;
     public float _windSpeed;
@@ -24,6 +26,10 @@ public class WeatherGenerator : MonoBehaviour
 
 
     private WeatherCalculator _wC;
+
+    public TextMeshProUGUI tempText;
+    public TextMeshProUGUI typeText;
+    public TextMeshProUGUI perlinText;
 
     private void Start()
     {
@@ -49,10 +55,7 @@ public class WeatherGenerator : MonoBehaviour
     }
         private void Update()
     {
-        //player.transform.Translate(0.1f, 0, 0.1f);
-        perlinPos.x = (player.transform.position.x / 100) + Time.deltaTime / 5;
-        perlinPos.y = (player.transform.position.z / 100) + Time.deltaTime / 5;
-        perlinNoise = Mathf.PerlinNoise(perlinPos.x, perlinPos.y);
+        perlinNoise = pPN.sample;
         Debug.Log(perlinNoise);
 
         //calls weather calculator class to get the temp, weather type and wind speed/direction

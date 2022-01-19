@@ -7,12 +7,15 @@ public class TEMPPN : MonoBehaviour
 {
     public int width = 256;
     public int length = 256;
-
+    public float sample;
     public float scale = 20f;
+
+    public Image image;
+
+    public Transform player;
     private void Update()
     {
-        Renderer ren = GetComponent<Renderer>();
-        ren.material.mainTexture = GenerateTexture();
+        image.material.mainTexture = GenerateTexture();
     }
 
     Texture2D GenerateTexture()
@@ -34,10 +37,10 @@ public class TEMPPN : MonoBehaviour
 
     Color CalculateColor(int x, int y)
     {
-        float xCoord = (float)x / width * scale;
-        float yCoord = (float)y / length * scale;
+        float xCoord = ((float)x / width * scale) * player.position.x;
+        float yCoord = ((float)y / length * scale) * player.position.z;
 
-        float sample = Mathf.PerlinNoise(xCoord, yCoord);
+        sample = Mathf.PerlinNoise(xCoord, yCoord);
         return new Color(sample, sample, sample);
     }
 }
