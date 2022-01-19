@@ -8,7 +8,7 @@ public class Spawn : MonoBehaviour
     private Transform SpawnPoint;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         SpawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint").transform;
     }

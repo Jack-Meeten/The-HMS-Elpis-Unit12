@@ -28,5 +28,4 @@ public class Item_Pickup : MonoBehaviour
             }
         }
     }
-
 }

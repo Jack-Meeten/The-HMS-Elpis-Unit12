@@ -38,7 +38,7 @@ public class Inventory : MonoBehaviour
     public void FreeMouse()
     {
         mouseFree = true;
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
         PlayerLook.enabled = false;
         inventoryWindow.SetActive(true);
