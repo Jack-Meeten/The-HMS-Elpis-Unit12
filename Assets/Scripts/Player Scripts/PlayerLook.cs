@@ -30,7 +30,7 @@ public class PlayerLook : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("PlayerLook Working!");
+
 
         //Gets the input from the keyboard.
         mouseX = Input.GetAxisRaw("Mouse X");

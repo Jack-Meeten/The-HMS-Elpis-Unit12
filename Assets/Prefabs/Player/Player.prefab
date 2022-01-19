@@ -497,8 +497,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12522f663ca1c034f92b4be2aef21dac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 0000000000
+  isFull: 00000000000000
   slots:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -536,7 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weatherGen: {fileID: 0}
-  cH: {fileID: 0}
+  cH: {fileID: 5270403043134110670}
   walkCurve:
     serializedVersion: 2
     m_Curve: []
