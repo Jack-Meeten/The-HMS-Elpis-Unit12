@@ -414,8 +414,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5270403043134110656}
-  - component: {fileID: 5270403043134110670}
   - component: {fileID: 5270403043134110671}
+  - component: {fileID: 5270403043134110670}
   - component: {fileID: 5270403043134110668}
   - component: {fileID: 5270403043134110669}
   - component: {fileID: 1143245347}
@@ -445,6 +445,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 114.577, z: 0}
+--- !u!114 &5270403043134110671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5270403043134110666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa6c136adbb34040ad06eea5bfe4e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensX: 250
+  sensY: 250
+  cam: {fileID: 0}
+  orientation: {fileID: 5270403043629095774}
 --- !u!114 &5270403043134110670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,22 +485,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   PlayerHeight: 2
---- !u!114 &5270403043134110671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5270403043134110666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fa6c136adbb34040ad06eea5bfe4e99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sensX: 250
-  sensY: 250
-  cam: {fileID: 0}
-  orientation: {fileID: 5270403043629095774}
 --- !u!114 &5270403043134110668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,6 +505,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   inventoryWindow: {fileID: 0}
+  Player: {fileID: 5270403043134110666}
+  PlayerLook: {fileID: 5270403043134110671}
 --- !u!54 &5270403043134110669
 Rigidbody:
   m_ObjectHideFlags: 0

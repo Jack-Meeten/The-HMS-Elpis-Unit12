@@ -13,9 +13,13 @@ public class Inventory : MonoBehaviour
     private bool mouseFree;
     public GameObject inventoryWindow;
 
+    //access "PlayerLook" & "CharacterController" to disable movement and camera movement.
+    public GameObject Player;
+    public Behaviour PlayerLook;
+
     void Start()
     {
-        
+        PlayerLook = Player.GetComponent<PlayerLook>();
     }
     private void Update()
     {
@@ -36,6 +40,7 @@ public class Inventory : MonoBehaviour
         mouseFree = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        PlayerLook.enabled = false;
         inventoryWindow.SetActive(true);
 
     }
@@ -44,6 +49,7 @@ public class Inventory : MonoBehaviour
         mouseFree = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        PlayerLook.enabled = true;
         inventoryWindow.SetActive(false);
     }
 }
