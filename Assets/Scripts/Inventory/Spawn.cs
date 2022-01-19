@@ -5,16 +5,16 @@ using UnityEngine;
 public class Spawn : MonoBehaviour
 {
     public GameObject item;
-    private Transform player;
+    private Transform SpawnPoint;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        SpawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint").transform;
     }
     public void SpawnDropped()
     {
-        Vector3 playerPos = new Vector3(player.position.x + 3, player.position.y, player.position.z);
+        Vector3 playerPos = new Vector3(SpawnPoint.position.x, SpawnPoint.position.y, SpawnPoint.position.z);
         Instantiate(item, playerPos, Quaternion.identity);
     }
 }
