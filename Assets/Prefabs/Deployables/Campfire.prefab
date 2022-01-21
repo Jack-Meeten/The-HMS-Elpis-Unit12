@@ -107,9 +107,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4335520959135734611}
+  - component: {fileID: 2066198333468432917}
   m_Layer: 3
   m_Name: Campfire
-  m_TagString: Untagged
+  m_TagString: Heat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,6 +130,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &2066198333468432917
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3990486120394359273}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 7.64
+  m_Center: {x: 3.32, y: 0.02, z: 0.27}
 --- !u!1001 &5773107673369147712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -136,9 +150,57 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6630306567586569132}
     m_Modifications:
+    - target: {fileID: 4441934662603986105, guid: 99d4ef7f35a225449b6ee6188a6cb505, type: 3}
+      propertyPath: VelocityModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441934662603986105, guid: 99d4ef7f35a225449b6ee6188a6cb505, type: 3}
+      propertyPath: VelocityModule.x.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441934662603986105, guid: 99d4ef7f35a225449b6ee6188a6cb505, type: 3}
+      propertyPath: VelocityModule.x.minScalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441934662603986105, guid: 99d4ef7f35a225449b6ee6188a6cb505, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441934662603986105, guid: 99d4ef7f35a225449b6ee6188a6cb505, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441934662603986105, guid: 99d4ef7f35a225449b6ee6188a6cb505, type: 3}
+      propertyPath: ForceModule.x.maxCurve.m_Curve.Array.data[1].time
+      value: 0.9602051
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441934662603986105, guid: 99d4ef7f35a225449b6ee6188a6cb505, type: 3}
+      propertyPath: ForceModule.x.maxCurve.m_Curve.Array.data[0].value
+      value: -0.015594922
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441934662603986105, guid: 99d4ef7f35a225449b6ee6188a6cb505, type: 3}
+      propertyPath: ForceModule.x.maxCurve.m_Curve.Array.data[1].value
+      value: -0.02620253
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441934662603986105, guid: 99d4ef7f35a225449b6ee6188a6cb505, type: 3}
+      propertyPath: ForceModule.x.maxCurve.m_Curve.Array.data[0].inSlope
+      value: -0.03272334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441934662603986105, guid: 99d4ef7f35a225449b6ee6188a6cb505, type: 3}
+      propertyPath: ForceModule.x.maxCurve.m_Curve.Array.data[0].outSlope
+      value: -0.03272334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441934662603986105, guid: 99d4ef7f35a225449b6ee6188a6cb505, type: 3}
+      propertyPath: ForceModule.x.maxCurve.m_Curve.Array.data[0].outWeight
+      value: 0.14942327
+      objectReference: {fileID: 0}
     - target: {fileID: 4441934662603986106, guid: 99d4ef7f35a225449b6ee6188a6cb505, type: 3}
       propertyPath: m_Name
       value: Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441934662603986106, guid: 99d4ef7f35a225449b6ee6188a6cb505, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4441934662603986107, guid: 99d4ef7f35a225449b6ee6188a6cb505, type: 3}
       propertyPath: m_RootOrder

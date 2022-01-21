@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class PlayerWeather : MonoBehaviour
 {
@@ -10,25 +12,38 @@ public class PlayerWeather : MonoBehaviour
     private float _temperature;
     private float _health;
     private float _hunger;
-    private float _windSpeed;
     private float movementSpeedModifier;
+    private bool isHeat = false;
+
+    public TextMeshProUGUI healthText;
+    public TextMeshProUGUI hungerText;
+    public TextMeshProUGUI tempText;
+    public GameObject debugUI;
+    private bool uiAcitve = false;
 
     public AnimationCurve walkCurve;
+
     void Start()
     {
-        _temperature = weatherGen._temp;
-        _windSpeed = weatherGen._windSpeed;
         _health = 100;
         _hunger = 100;
     }
 
     void Update()
     {
-        _windSpeed = weatherGen._windSpeed;
-        //cH.movementMultiplier = walkCurve.Evaluate(Time.deltaTime * 4000);
-        if (_hunger > 0)
+        if (!isHeat)
         {
-            _hunger -= Time.deltaTime * 20;
+            _temperature = weatherGen._temp;
+        }
+        cH.movementMultiplier = (10 * weatherGen._windSpeed) * movementSpeedModifier;//walkCurve.Evaluate(Time.deltaTime * 4000);
+
+        healthText.text = "Health:" + _health;
+        hungerText.text = "Hunger:" + _hunger;
+        tempText.text = "Temp" + _temperature + "C";
+
+        if (_hunger > 0 && !isHeat)
+        {
+            _hunger -= Time.deltaTime * 0.2f;
         }
         if (_hunger < 20)
         {
@@ -45,6 +60,42 @@ public class PlayerWeather : MonoBehaviour
         if (_health < 20)
         {
             movementSpeedModifier = 0.75f;
+        }
+        else
+        {
+            movementSpeedModifier = 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            if (uiAcitve)
+            {
+                Debug.Log("not active");
+                debugUI.SetActive(false);
+                uiAcitve = false;
+            }
+            if (!uiAcitve)
+            {
+                Debug.Log("active");
+                debugUI.SetActive(true);
+                uiAcitve = true;
+            }
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Heat")
+        {
+            isHeat = true;
+            _temperature = -2;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Heat")
+        {
+            isHeat = false;
         }
     }
 }

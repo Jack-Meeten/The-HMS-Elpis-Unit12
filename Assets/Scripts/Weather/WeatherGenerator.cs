@@ -74,17 +74,14 @@ public class WeatherGenerator : MonoBehaviour
         _weatherType = weatherTypeOut;
         _windSpeed = windSpeedOut;
         startTempValue = _temp;
-        //temp lerp
         _temp = Mathf.SmoothStep(startTempValue, endTempValue, timeElapsed / lerpTime);
         timeElapsed += Time.deltaTime;
-        //Debug.Log(_temp);
-        //Debug.Log(_weatherType);
 
         if (_weatherType == 2)
         {
-            if (fog.height >= 150)
+            if (fog.height >= 1100)
             {
-                fog.height -= Time.deltaTime * 10;
+                fog.height -= Time.deltaTime * 40;
                 fogText.text = fog.height.ToString();
                 fogIm.color = Color.red;
                 tranText.text = "Transitioning";
@@ -129,9 +126,9 @@ public class WeatherGenerator : MonoBehaviour
         }
         if (_weatherType == 1 || _weatherType == 3)
         {
-            if (fog.height <= 800)
+            if (fog.height <= 3500)
             {
-                fog.height += Time.deltaTime * 10;
+                fog.height += Time.deltaTime * 40;
                 fogText.text = fog.height.ToString();
                 fogIm.color = Color.red;
                 tranText.text = "Transitioning";

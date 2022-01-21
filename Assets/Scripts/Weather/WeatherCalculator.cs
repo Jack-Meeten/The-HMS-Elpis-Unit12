@@ -21,7 +21,7 @@ namespace Assets
             if (perlin > 0.3 && perlin <= .59)
             {
                 weatherType = 2;
-                windSpeed = 0.7f;
+                windSpeed = 0.85f;
 
             }
             if (perlin > 0.6 && perlin <= 1)
