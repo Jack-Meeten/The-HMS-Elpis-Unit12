@@ -978,6 +978,10 @@ PrefabInstance:
       propertyPath: slots.Array.data[6]
       value: 
       objectReference: {fileID: 1798764667}
+    - target: {fileID: 5270403043134110670, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
+      propertyPath: groundMask.m_Bits
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 5270403043134110671, guid: 01a5141224e4c424eb30f3604d22596c, type: 3}
       propertyPath: cam
       value: 
