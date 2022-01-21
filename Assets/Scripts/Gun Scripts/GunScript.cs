@@ -24,6 +24,9 @@ public class GunScript : MonoBehaviour
     //Select the ammunition you want your weapon tu use.
     [SerializeField] GameObject AmmoType;
 
+    //Animator for the gun shoot mechanic.
+    [SerializeField] Animator MusketAnimator;
+
     void Start()
     {
         modeChecker();
@@ -71,6 +74,7 @@ public class GunScript : MonoBehaviour
     //Main Shoot mechanic && projectile effects
     void Shoot()
     {
+        MusketAnimator.SetTrigger("Shoot");
         GameObject Projectile = Instantiate(AmmoType, gunTip.position, gunTip.rotation);
         Rigidbody rb = Projectile.GetComponent<Rigidbody>();
         rb.AddForce(gunTip.forward * BulletSpeed, ForceMode.Impulse);
