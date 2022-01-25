@@ -9,6 +9,7 @@ TagManager:
   - Sanity
   - SpawnPoint
   - Heat
+  - Shadows
   layers:
   - Default
   - TransparentFX
