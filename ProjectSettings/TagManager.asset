@@ -9,7 +9,7 @@ TagManager:
   - Sanity
   - SpawnPoint
   - Heat
-  - Cart
+  - Shadows
   layers:
   - Default
   - TransparentFX
