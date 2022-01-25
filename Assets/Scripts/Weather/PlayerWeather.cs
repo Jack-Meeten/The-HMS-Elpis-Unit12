@@ -61,6 +61,10 @@ public class PlayerWeather : MonoBehaviour
         {
             movementSpeedModifier = 0.75f;
         }
+        if (_health <= 0)
+        {
+            Death();
+        }
         else
         {
             movementSpeedModifier = 1;
@@ -82,6 +86,12 @@ public class PlayerWeather : MonoBehaviour
             }
         }
     }
+
+    public void Death()
+    {
+
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Heat")

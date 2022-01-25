@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d35080f1bab35741b28eb2fe1ef95fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 6.5
+  force: 12
   rotateForce: 13
   player: {fileID: 0}
   _camera: {fileID: 0}
@@ -167,7 +167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3541691348728082902, guid: f521a76e58c509e47925405cce41705f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.77
+      value: -1.53
       objectReference: {fileID: 0}
     - target: {fileID: 3541691348728082902, guid: f521a76e58c509e47925405cce41705f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -175,7 +175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3541691348728082902, guid: f521a76e58c509e47925405cce41705f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.1669488
+      value: -5.34
       objectReference: {fileID: 0}
     - target: {fileID: 3541691348728082902, guid: f521a76e58c509e47925405cce41705f, type: 3}
       propertyPath: m_LocalRotation.w
