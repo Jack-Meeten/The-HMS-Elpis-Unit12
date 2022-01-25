@@ -483,7 +483,7 @@ MonoBehaviour:
   orientation: {fileID: 5270403043629095774}
   groundMask:
     serializedVersion: 2
-    m_Bits: 4
+    m_Bits: 12
   PlayerHeight: 2
 --- !u!114 &5270403043134110668
 MonoBehaviour:
@@ -539,10 +539,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weatherGen: {fileID: 0}
   cH: {fileID: 5270403043134110670}
-  isHeat: 0
   healthText: {fileID: 0}
   hungerText: {fileID: 0}
   tempText: {fileID: 0}
+  debugUI: {fileID: 0}
   walkCurve:
     serializedVersion: 2
     m_Curve:

@@ -161,10 +161,6 @@ public class WeatherGenerator : MonoBehaviour
                 tranText.text = "Transitioning";
                 transIm.color = Color.red;
             }
-            if (true)
-            {
-
-            }
             else
             {
                 tranText.text = "Done";
