@@ -922,6 +922,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 484540518}
     - target: {fileID: 5053305822774766340, guid: 948872c3c831236498721ea1a3602353, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053305822774766340, guid: 948872c3c831236498721ea1a3602353, type: 3}
       propertyPath: snowClose
       value: 
       objectReference: {fileID: 1846250000}
