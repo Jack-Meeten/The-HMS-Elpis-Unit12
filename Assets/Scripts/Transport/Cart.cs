@@ -18,6 +18,8 @@ public class Cart : MonoBehaviour
 
     private bool isActive;
 
+    private Vector3 pushForce;
+
     private void Start()
     {
         _rB = GetComponent<Rigidbody>();
@@ -45,7 +47,7 @@ public class Cart : MonoBehaviour
             _camera.GetComponentInChildren<Transform>().rotation = camPoint.rotation;
             _camera.transform.GetChild(0).transform.rotation = camPoint.rotation;
 
-            Debug.Log(_rB.velocity.magnitude);
+            //Debug.Log(_rB.velocity.magnitude);
             if (_rB.velocity.magnitude > 10)
             {
                 _rB.velocity = _rB.velocity.normalized * 10;
@@ -55,6 +57,9 @@ public class Cart : MonoBehaviour
         {
             exit();
         }
+
+        pushForce = player.transform.forward * 1000;
+        Debug.Log(player.transform.forward * 1000);
     }
 
     private void MoveForward()
@@ -88,6 +93,10 @@ public class Cart : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             enter();
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            _rB.AddForceAtPosition(pushForce, player.transform.position);
         }
     }
 }

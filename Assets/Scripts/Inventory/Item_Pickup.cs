@@ -21,6 +21,7 @@ public class Item_Pickup : MonoBehaviour
                 {
                     //add to inventory
                     inventory.isFull[i] = true;
+                    Destroy(inventory.slots[i].transform.GetChild(0).gameObject);
                     Instantiate(itemButton, inventory.slots[i].transform, false);
                     Destroy(gameObject);
                     break;
