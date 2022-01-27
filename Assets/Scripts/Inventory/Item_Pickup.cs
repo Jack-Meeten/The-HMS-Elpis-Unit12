@@ -11,13 +11,13 @@ public class Item_Pickup : MonoBehaviour
     {
         inventory = GameObject.FindGameObjectWithTag("PlayerScripts").GetComponent<Inventory>();
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("PlayerScripts"))
         {
             for (int i = 0; i <= inventory.slots.Length; i++)
             {
-                if(inventory.isFull[i] == false)
+                if (inventory.isFull[i] == false)
                 {
                     //add to inventory
                     inventory.isFull[i] = true;

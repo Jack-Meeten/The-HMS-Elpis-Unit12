@@ -63,6 +63,9 @@ public class Crafting : MonoBehaviour
                         {
                             inventory.isFull[i] = false;
                         }
+                        item1 = false;
+                        item2 = false;
+                        numberItems = 0;
                         Destroy(inventory.slots[_i].transform.GetChild(0).gameObject);
                         Destroy(woodList[0]);
                         Destroy(stoneList[0]);
@@ -105,6 +108,9 @@ public class Crafting : MonoBehaviour
                     {
                         inventory.isFull[i] = false;
                     }
+                    item1 = false;
+                    item2 = false;
+                    numberItems = 0;
                     Destroy(inventory.slots[_i].transform.GetChild(0).gameObject);
                     Destroy(woodList[0]);
                     Destroy(stoneList[0]);

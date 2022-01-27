@@ -3929,6 +3929,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1747410390}
     m_Modifications:
+    - target: {fileID: 4845123642734743071, guid: 713003e28078fa9498bded383aeb700c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4951689328031101005, guid: 713003e28078fa9498bded383aeb700c, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3947,15 +3951,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4951689328031101005, guid: 713003e28078fa9498bded383aeb700c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.2668686
+      value: 1.185
       objectReference: {fileID: 0}
     - target: {fileID: 4951689328031101005, guid: 713003e28078fa9498bded383aeb700c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0154731
+      value: -0.97
       objectReference: {fileID: 0}
     - target: {fileID: 4951689328031101005, guid: 713003e28078fa9498bded383aeb700c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.7099609
+      value: 1.902
       objectReference: {fileID: 0}
     - target: {fileID: 4951689328031101005, guid: 713003e28078fa9498bded383aeb700c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4151,7 +4155,7 @@ GameObject:
   - component: {fileID: 881197762}
   - component: {fileID: 881197761}
   - component: {fileID: 881197760}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Hill Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7109,7 +7113,7 @@ GameObject:
   - component: {fileID: 1658299683}
   - component: {fileID: 1658299682}
   - component: {fileID: 1658299681}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
