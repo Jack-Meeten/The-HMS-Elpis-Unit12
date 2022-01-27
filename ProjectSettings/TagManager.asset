@@ -12,6 +12,9 @@ TagManager:
   - Shadows
   - Wood
   - Stone
+  - Dynamite
+  - Cloth
+  - Empty
   layers:
   - Default
   - TransparentFX

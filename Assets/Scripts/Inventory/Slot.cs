@@ -6,6 +6,8 @@ public class Slot : MonoBehaviour
 {
     private Inventory inventory;
     public int i;
+
+    public GameObject empty;
     private void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("PlayerScripts").GetComponent<Inventory>();
@@ -23,6 +25,7 @@ public class Slot : MonoBehaviour
         {        
             child.GetComponent<Spawn>().SpawnDropped();
             GameObject.Destroy(child.gameObject);
+            Instantiate(empty, gameObject.transform, true);
         }
     }
 }
