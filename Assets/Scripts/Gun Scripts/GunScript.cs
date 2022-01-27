@@ -27,9 +27,18 @@ public class GunScript : MonoBehaviour
     //Animator for the gun shoot mechanic.
     [SerializeField] Animator MusketAnimator;
 
+    //Weapon shoot SFX
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip ShootSFX;
+    [SerializeField] float ShootSFXVolume = 1f;
+
+    //Weapon shoot muzzle flash
+    [SerializeField] GameObject Cannon_Flash;
+
     void Start()
     {
         modeChecker();
+        audioSource = GetComponent<AudioSource>();
         initialFireRate = FireRate;
         startingAmmo = Ammo;
         isReloading = false;
@@ -78,9 +87,10 @@ public class GunScript : MonoBehaviour
         GameObject Projectile = Instantiate(AmmoType, gunTip.position, gunTip.rotation);
         Rigidbody rb = Projectile.GetComponent<Rigidbody>();
         rb.AddForce(gunTip.forward * BulletSpeed, ForceMode.Impulse);
+        audioSource.PlayOneShot(ShootSFX, ShootSFXVolume);
         Ammo -= 1f;
-        //GameObject effect = Instantiate(Cannon_Flash, gunTip.transform.position, gunTip.transform.rotation);     <------- Muzzle Flash
-        //Destroy(effect, 3f);
+        GameObject MuzzleFlash = Instantiate(Cannon_Flash, gunTip.transform.position, gunTip.transform.rotation);
+        Destroy(MuzzleFlash, 100f);
     }
 
     //Switcher for different fire modes, semi-auto and full auto.
