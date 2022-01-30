@@ -19,12 +19,12 @@ public class HandChange : MonoBehaviour
 
     void IntLimiter()
     {
-        if (selectedItem <= 0)
+        if (selectedItem <= -1)
         {
-            selectedItem = 3;
+            selectedItem = 2;
         }
 
-        if (selectedItem >= 2)
+        if (selectedItem >= 3)
         {
             selectedItem = 0;
         }
@@ -34,12 +34,14 @@ public class HandChange : MonoBehaviour
     {
         if (Input.mouseScrollDelta.y == 1f)
         {
-            selectedItem = +1;
+            Debug.Log("Scrolling Up!");
+            selectedItem += 1;
         }
 
         if (Input.mouseScrollDelta.y == -1f)
         {
-            selectedItem = -1;
+            Debug.Log("Scrolling Down!");
+            selectedItem -= 1;
         }
     }
 
