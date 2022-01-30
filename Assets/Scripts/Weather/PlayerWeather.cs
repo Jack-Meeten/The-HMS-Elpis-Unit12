@@ -136,6 +136,13 @@ public class PlayerWeather : MonoBehaviour
             fog.height -= Time.deltaTime * 80;
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "AudioTrigger")
+        {
+            other.GetComponent<AudioSource>().Play();
+        }
+    }
 
     private void OnTriggerExit(Collider other)
     {
