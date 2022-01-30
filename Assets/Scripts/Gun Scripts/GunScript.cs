@@ -5,6 +5,7 @@ using UnityEngine;
 public class GunScript : MonoBehaviour
 {
     //Change this values to create new types of guns.
+    [Header("Gun Settings")]
     [SerializeField] float startingAmmo;
     [SerializeField] float Ammo;
     [SerializeField] float Magazines;
@@ -18,6 +19,7 @@ public class GunScript : MonoBehaviour
     private float timeToFire = 0;
     private float initialFireRate;
 
+    [Header("Gun Setup")]
     //Select the tip of the gun from where the bullets will exit the gun.
     [SerializeField] Transform gunTip;
 
@@ -27,6 +29,7 @@ public class GunScript : MonoBehaviour
     //Animator for the gun shoot mechanic.
     [SerializeField] Animator MusketAnimator;
 
+    [Header("Gun FX")]
     //Weapon shoot SFX
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip ShootSFX;
