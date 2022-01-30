@@ -18,6 +18,7 @@ TagManager:
   - Empty
   - AudioTrigger
   - IceWall
+  - Ending
   layers:
   - Default
   - TransparentFX

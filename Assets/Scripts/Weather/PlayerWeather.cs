@@ -27,21 +27,32 @@ public class PlayerWeather : MonoBehaviour
 
     public AudioSource Steps;
 
-    public TextMeshProUGUI uiHealth;
-    public TextMeshProUGUI uiHunger;
-    public TextMeshProUGUI uiTemp;
+    public Slider uiHealth;
+    public Slider uiHunger;
+    public Slider uiTemp;
+
+    public Transform TPPoint1;
+    public Transform TPPoint2;
+    public Transform TPPoint3;
+    public Transform TPPoint4;
+    public Transform TPPoint5;
+    public Transform TPPoint6;
 
     void Start()
     {
         _health = 100;
         _hunger = 100;
+        uiHealth.maxValue = _health;
+        uiHunger.maxValue = _hunger;
+        uiTemp.maxValue = 0;
+        uiTemp.minValue = -25;
     }
 
     void Update()
     {
-        uiHealth.text = "Health:  " + _health;
-        uiHunger.text = "Hunger:  " + _hunger;
-        uiTemp.text = "Temp:  " + weatherGen._temp;
+        uiHealth.value = _health;
+        uiHunger.value = _hunger;
+        uiTemp.value = weatherGen._temp;
 
         if (!isHeat)
         {
@@ -106,6 +117,31 @@ public class PlayerWeather : MonoBehaviour
         {
             Steps.mute = true;
         }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            transform.position = TPPoint1.position;
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            transform.position = TPPoint2.position;
+        }
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            transform.position = TPPoint3.position;
+        }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            transform.position = TPPoint4.position;
+        }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            transform.position = TPPoint5.position;
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            transform.position = TPPoint6.position;
+        }
     }
 
     public void Death()
@@ -141,6 +177,10 @@ public class PlayerWeather : MonoBehaviour
         if (other.tag == "AudioTrigger")
         {
             other.GetComponent<AudioSource>().Play();
+        }
+        if (other.tag == "Ending")
+        {
+            SceneManager.LoadScene("Ending");
         }
     }
 
