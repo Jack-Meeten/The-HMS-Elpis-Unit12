@@ -9,6 +9,7 @@ public class PlayerWeather : MonoBehaviour
 {
     public WeatherGenerator weatherGen;
     public CharacterController cH;
+    public PostProcessVertFog fog;
 
     private float _temperature;
     public float _health;
@@ -119,6 +120,12 @@ public class PlayerWeather : MonoBehaviour
         {
             isHeat = true;
             _temperature = -2;
+        }
+        if (other.tag == "DropZone")
+        {
+            Debug.Log("Zone");
+            _temperature = -30;
+            fog.height -= Time.deltaTime * 80;
         }
     }
 

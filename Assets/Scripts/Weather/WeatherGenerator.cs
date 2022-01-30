@@ -81,6 +81,7 @@ public class WeatherGenerator : MonoBehaviour
 
         if (_weatherType == 2)
         {
+            fogText.text = fog.height.ToString();
             if (fog.height >= 1100)
             {
                 fog.height -= Time.deltaTime * 40;
@@ -132,6 +133,7 @@ public class WeatherGenerator : MonoBehaviour
         }
         if (_weatherType == 1 || _weatherType == 3)
         {
+            fogText.text = fog.height.ToString();
             if (fog.height <= 3500)
             {
                 fog.height += Time.deltaTime * 40;
