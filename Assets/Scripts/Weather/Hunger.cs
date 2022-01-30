@@ -14,5 +14,6 @@ public class Hunger : MonoBehaviour
     public void HungerEat()
     {
         player._hunger = player._hunger + 20;
+        transform.parent.GetComponent<Slot>().DropItemDIE();
     }
 }

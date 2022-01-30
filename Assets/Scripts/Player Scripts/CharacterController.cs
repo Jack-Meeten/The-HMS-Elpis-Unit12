@@ -145,7 +145,6 @@ public class CharacterController : MonoBehaviour
         }
         else if(isGrounded && OnSlope())
         {
-            Debug.Log("Hitting Slope");
             rb.AddForce(slopeMoveDir.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
         }
         else if (!isGrounded)

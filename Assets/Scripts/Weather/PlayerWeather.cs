@@ -41,7 +41,7 @@ public class PlayerWeather : MonoBehaviour
     {
         uiHealth.text = "Health:  " + _health;
         uiHunger.text = "Hunger:  " + _hunger;
-        uiTemp.text = "Temperature:  " + weatherGen._temp;
+        uiTemp.text = "Temp:  " + weatherGen._temp;
 
         if (!isHeat)
         {

@@ -17,6 +17,7 @@ TagManager:
   - DropZone
   - Empty
   - AudioTrigger
+  - IceWall
   layers:
   - Default
   - TransparentFX

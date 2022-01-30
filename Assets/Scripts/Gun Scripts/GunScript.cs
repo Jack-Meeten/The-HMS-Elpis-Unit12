@@ -36,7 +36,7 @@ public class GunScript : MonoBehaviour
     [SerializeField] float ShootSFXVolume = 1f;
 
     //Weapon shoot muzzle flash
-    [SerializeField] GameObject Cannon_Flash;
+    [SerializeField] ParticleSystem muzzleFlash;
 
     void Start()
     {
@@ -92,8 +92,7 @@ public class GunScript : MonoBehaviour
         rb.AddForce(gunTip.forward * BulletSpeed, ForceMode.Impulse);
         audioSource.PlayOneShot(ShootSFX, ShootSFXVolume);
         Ammo -= 1f;
-        GameObject MuzzleFlash = Instantiate(Cannon_Flash, gunTip.transform.position, gunTip.transform.rotation);
-        Destroy(MuzzleFlash, 100f);
+        muzzleFlash.Play(true);
     }
 
     //Switcher for different fire modes, semi-auto and full auto.

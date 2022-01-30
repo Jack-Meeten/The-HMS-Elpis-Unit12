@@ -28,4 +28,9 @@ public class Slot : MonoBehaviour
             Instantiate(empty, gameObject.transform, true);
         }
     }
+    public void DropItemDIE()
+    {
+        GameObject.Destroy(transform.GetChild(0).gameObject);
+        Instantiate(empty, gameObject.transform, true);
+    }
 }
