@@ -27,6 +27,10 @@ public class PlayerWeather : MonoBehaviour
 
     public AudioSource Steps;
 
+    public TextMeshProUGUI uiHealth;
+    public TextMeshProUGUI uiHunger;
+    public TextMeshProUGUI uiTemp;
+
     void Start()
     {
         _health = 100;
@@ -35,6 +39,10 @@ public class PlayerWeather : MonoBehaviour
 
     void Update()
     {
+        uiHealth.text = "Health:  " + _health;
+        uiHunger.text = "Hunger:  " + _hunger;
+        uiTemp.text = "Temperature:  " + weatherGen._temp;
+
         if (!isHeat)
         {
             _temperature = weatherGen._temp;
