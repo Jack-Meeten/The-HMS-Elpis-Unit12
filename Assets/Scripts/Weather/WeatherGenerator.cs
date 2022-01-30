@@ -39,6 +39,8 @@ public class WeatherGenerator : MonoBehaviour
     public TextMeshProUGUI fogText;
     public RawImage fogIm;
 
+    public AudioSource weatherSound;
+
     private void Start()
     {
         _wC = new WeatherCalculator();
@@ -63,7 +65,7 @@ public class WeatherGenerator : MonoBehaviour
     }
     private void Update()
     {
-        perlinNoise = Mathf.PerlinNoise(player.transform.position.x / 100, player.transform.position.z / 100);
+        perlinNoise = Mathf.PerlinNoise(player.transform.position.x / 450, player.transform.position.z / 450);
         tempText.text = "Temp:" + _temp + "C";
         typeText.text = "Type:" + _weatherType;
         perlinText.text = "Perlin:" + perlinNoise;
@@ -123,6 +125,10 @@ public class WeatherGenerator : MonoBehaviour
                 farIm.color = Color.green;
                 fogIm.color = Color.green;
             }
+            if (weatherSound.volume < 1)
+            {
+                weatherSound.volume = weatherSound.volume + Time.deltaTime / 30;
+            }
         }
         if (_weatherType == 1 || _weatherType == 3)
         {
@@ -169,6 +175,10 @@ public class WeatherGenerator : MonoBehaviour
                 closeIm.color = Color.green;
                 farIm.color = Color.green;
                 fogIm.color = Color.green;
+            }
+            if (weatherSound.volume > 0)
+            {
+                weatherSound.volume = weatherSound.volume - Time.deltaTime / 30;
             }
         }
     }

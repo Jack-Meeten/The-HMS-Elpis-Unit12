@@ -47,6 +47,9 @@ public class CharacterController : MonoBehaviour
     RaycastHit slopeHit;
     Vector3 slopeMoveDir;
 
+    //sound
+    public AudioSource Steps;
+
     private bool OnSlope()
     {
         Debug.DrawRay(transform.position, Vector3.down * (PlayerHeight / 2 + 0.5f));
@@ -91,6 +94,11 @@ public class CharacterController : MonoBehaviour
 
         // Slope moving.
         slopeMoveDir = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal);
+
+        if (!isGrounded)
+        {
+            Steps.mute = true;
+        }
         
     }
     private void FixedUpdate()

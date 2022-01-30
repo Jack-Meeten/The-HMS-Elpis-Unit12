@@ -59,7 +59,7 @@ public class Cart : MonoBehaviour
         }
 
         pushForce = player.transform.forward * 1000;
-        Debug.Log(player.transform.forward * 1000);
+        //Debug.Log(player.transform.forward * 1000);
     }
 
     private void MoveForward()

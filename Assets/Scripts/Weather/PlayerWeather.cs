@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerWeather : MonoBehaviour
@@ -10,8 +11,8 @@ public class PlayerWeather : MonoBehaviour
     public CharacterController cH;
 
     private float _temperature;
-    private float _health;
-    private float _hunger;
+    public float _health;
+    public float _hunger;
     private float movementSpeedModifier;
     private bool isHeat = false;
 
@@ -21,7 +22,9 @@ public class PlayerWeather : MonoBehaviour
     public GameObject debugUI;
     private bool uiAcitve = false;
 
-    public AnimationCurve walkCurve;
+    public GameObject DeathScreen;
+
+    public AudioSource Steps;
 
     void Start()
     {
@@ -85,11 +88,29 @@ public class PlayerWeather : MonoBehaviour
                 uiAcitve = true;
             }
         }
+
+        if (GetComponent<Rigidbody>().velocity.magnitude !=0)
+        {
+            Steps.mute = false;
+        }
+        if (GetComponent<Rigidbody>().velocity.magnitude == 0)
+        {
+            Steps.mute = true;
+        }
     }
 
     public void Death()
     {
+        Debug.Log("Dead");
+        DeathScreen.SetActive(true);
+        Time.timeScale = 0.1f;
+        StartCoroutine(DeathTimer());
+    }
 
+    private IEnumerator DeathTimer()
+    {
+        yield return new WaitForSecondsRealtime(3);
+        SceneManager.LoadScene(0);
     }
 
     private void OnTriggerStay(Collider other)

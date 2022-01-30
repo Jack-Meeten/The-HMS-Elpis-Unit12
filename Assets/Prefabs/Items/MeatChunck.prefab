@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d2c399a272cb4244b798f4701ebac0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemButton: {fileID: 0}
+  itemButton: {fileID: 4592540837974780343, guid: 67fa165aa0a311a4fbb67ed28a22ec3c, type: 3}
 --- !u!54 &-5901711516350115990
 Rigidbody:
   m_ObjectHideFlags: 0
