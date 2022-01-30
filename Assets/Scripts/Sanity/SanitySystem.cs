@@ -15,6 +15,7 @@ public class SanitySystem : MonoBehaviour
 
     [SerializeField] float SanityTriggerMark1 = 75f;
     [SerializeField] float SanityTriggerMark2 = 50f;
+    [SerializeField] float SanityTriggerMark3 = 25f;
 
 
     [Header("Despawn Timers")]
@@ -24,16 +25,20 @@ public class SanitySystem : MonoBehaviour
 
 
     [Header("Sanity Level")]
-
+    
     [SerializeField] int SanityLevel;
-
     public bool SanityTrigger = false;
-
     // Array of spawn locations for the sanity shadows & sounds
     public GameObject[] SpawnLocations;
-
     public GameObject[] SpawnShadows;
 
+
+    [Header("Sanity Voice Ques")]
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip Sanity1;
+    [SerializeField] AudioClip Sanity2;
+    [SerializeField] AudioClip Sanity3;
+    [SerializeField] float SanitySFXVolume = 1f;
 
     void Start()
     {
@@ -43,6 +48,9 @@ public class SanitySystem : MonoBehaviour
 
         // Set the sanity Level to 1 on begin play.
         SanityLevel = 1;
+
+        // Get the Audio Source component and reference it as audioSource.
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -68,6 +76,7 @@ public class SanitySystem : MonoBehaviour
             SanityTrigger = false;
             SanityCurrentValue = 74f;
             SanityLevel = 2;
+            audioSource.PlayOneShot(Sanity1, SanitySFXVolume);
 
             SanityLevel2();
         }
@@ -78,6 +87,18 @@ public class SanitySystem : MonoBehaviour
             SanityTrigger = false;
             SanityCurrentValue = 49f;
             SanityLevel = 3;
+            audioSource.PlayOneShot(Sanity2, SanitySFXVolume);
+
+            SanityLevel3();
+        }
+
+        // Sanity Level setting to 3.
+        if (SanityLevel == 3 && SanityCurrentValue <= SanityTriggerMark3 && SanityTrigger == true)
+        {
+            SanityTrigger = false;
+            SanityCurrentValue = 24f;
+            SanityLevel = 4;
+            audioSource.PlayOneShot(Sanity3, SanitySFXVolume);
 
             SanityLevel3();
         }
