@@ -17,6 +17,9 @@ public class Inventory : MonoBehaviour
     public GameObject Player;
     public Behaviour PlayerLook;
 
+    //disable gun while using inventory.
+    [SerializeField] GameObject Hands;
+
     void Start()
     {
         PlayerLook = Player.GetComponent<PlayerLook>();
@@ -42,6 +45,7 @@ public class Inventory : MonoBehaviour
         Cursor.visible = true;
         PlayerLook.enabled = false;
         inventoryWindow.SetActive(true);
+        Hands.SetActive(false);
 
     }
     public void CloseWindow()
@@ -51,5 +55,6 @@ public class Inventory : MonoBehaviour
         Cursor.visible = false;
         PlayerLook.enabled = true;
         inventoryWindow.SetActive(false);
+        Hands.SetActive(true);
     }
 }

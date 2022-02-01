@@ -51,11 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a93934d7dd1e534d9d2283cfaad7990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SanityStarterValue: 100
+  SanityStarterValue: 1000
   SanityCurrentValue: 0
-  SanityTriggerMark1: 75
-  SanityTriggerMark2: 50
-  SanityTriggerMark3: 25
+  SanityTriggerMark1: 750
+  SanityTriggerMark2: 500
+  SanityTriggerMark3: 250
   TimerTier1: 5
   TimerTier2: 10
   SanityLevel: 0
@@ -580,6 +580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weatherGen: {fileID: 0}
   cH: {fileID: 5270403043134110670}
+  fog: {fileID: 0}
   _health: 0
   _hunger: 0
   healthText: {fileID: 0}
@@ -588,6 +589,9 @@ MonoBehaviour:
   debugUI: {fileID: 0}
   DeathScreen: {fileID: 0}
   Steps: {fileID: 1097886935}
+  uiHealth: {fileID: 0}
+  uiHunger: {fileID: 0}
+  uiTemp: {fileID: 0}
 --- !u!82 &1097886935
 AudioSource:
   m_ObjectHideFlags: 0
