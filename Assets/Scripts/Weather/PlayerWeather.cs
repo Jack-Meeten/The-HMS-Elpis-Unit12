@@ -168,7 +168,6 @@ public class PlayerWeather : MonoBehaviour
         if (other.tag == "DropZone")
         {
             Debug.Log("Zone");
-            _temperature = -30;
             fog.height -= Time.deltaTime * 80;
         }
     }
