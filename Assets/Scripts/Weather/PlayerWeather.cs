@@ -93,7 +93,7 @@ public class PlayerWeather : MonoBehaviour
             movementSpeedModifier = 1;
         }
 
-        if (Input.GetKeyDown(KeyCode.Y))
+        /*if (Input.GetKeyDown(KeyCode.Y))
         {
             if (uiAcitve)
             {
@@ -107,7 +107,7 @@ public class PlayerWeather : MonoBehaviour
                 debugUI.SetActive(true);
                 uiAcitve = true;
             }
-        }
+        }*/
 
         if (GetComponent<Rigidbody>().velocity.magnitude !=0)
         {
